@@ -110,7 +110,8 @@
                     <i class="bi bi-facebook" style="font-size :2rem; p-3"></i>
                     <i class="bi bi-instagram" style="font-size :2rem;" ></i>
             </div>
-
+  
+            
             <div class="col">
                 <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
                 <p class="text-white">
