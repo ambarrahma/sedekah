@@ -40,6 +40,9 @@
   </div>
 </nav>
   <body>
+
+<!-- FORM DAFTAR AKUN -->
+
  <section id="form">   
   <form method="POST" action="{{ route('login') }}">
     <div class="container border mt-3">

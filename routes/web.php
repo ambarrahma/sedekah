@@ -7,6 +7,7 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('home');
 });
+
 Route::get('/form', function () {
     return view('form');
 })->name('sedekah.form');
