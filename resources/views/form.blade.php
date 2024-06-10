@@ -41,7 +41,7 @@
 </nav>
   <body>
  <section id="form">   
-  <form>
+  <form method="POST" action="{{ route('login') }}">
     <div class="container border mt-3">
         <p class="fw-bold p-3" style="font-size :3rem; ">Daftarkan Akun Anda </p>
         <div class="mb-3">
