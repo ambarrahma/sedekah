@@ -7,13 +7,14 @@ use App\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/form', function () {
-    return view('form');
-})->name('sedekah.form');
+Route::get('/formsignup', function () {
+    return view('formsignup');
+})->name('sedekah.formsignup');
 
 Route::get('/login', function () {
     return view('login');
 })->name('login');
+
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
