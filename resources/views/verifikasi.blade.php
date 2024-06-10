@@ -13,13 +13,13 @@
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand fw-bold" href="#">Sedekah.com</a>
-    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+    <a class="navbar-brand fw-bold" href="#">SedekahIn</a>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
       <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Sedekah.com</h5>
+        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SedekahIn</h5>
         <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
       </div>
-      <div class="offcanvas-body">
+      <div class="offcanvas-body d-flex flex-column justify-content-between">
         <ul class="navbar-nav flex-column">
           <li class="nav-item">
             <a class="nav-link" href="#dashboard">Dashboard</a>
@@ -34,7 +34,14 @@
             <a class="nav-link" href="#buatdonasi">Buat Donasi</a>
           </li>
         </ul>
-        
+        <ul class="navbar-nav flex-column mt-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/">Kembali ke Halaman Utama</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/logout">Keluar</a>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
@@ -130,14 +137,31 @@
                             <p class="card-text">Tanggal Donasi: 2024-06-01</p>
                             <p class="card-text">Jumlah: Rp 500.000</p>
                         </div>
+                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
+                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
+                            </button>
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
+                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
+                
                 <div class="col-12 mb-3 donation-item" data-date="2024-06-08">
                     <div class="card">
                         <div class="card-body">
                             <h5 class="card-title">Donasi untuk Kesehatan</h5>
                             <p class="card-text">Tanggal Donasi: 2024-06-08</p>
                             <p class="card-text">Jumlah: Rp 300.000</p>
+                        </div>
+                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
+                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
+                            </button>
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
+                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -147,6 +171,14 @@
                             <h5 class="card-title">Donasi untuk Bencana Alam</h5>
                             <p class="card-text">Tanggal Donasi: 2024-06-15</p>
                             <p class="card-text">Jumlah: Rp 700.000</p>
+                        </div>
+                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
+                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
+                            </button>
+                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
+                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -158,7 +190,7 @@
     <div class="container mt-3">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
             <div class="col">
-            <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
+            <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
                         untuk Non-Bencana di Kementerian Sosial Republik Indonesia
                         dengan surat izin 341/HUK-PS/2023
@@ -171,7 +203,7 @@
                 <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
                 <p class="text-white">
                     <ul class="text-white text-end pe-5">Syarat dan Ketentuan</ul>
-                    <ul class="text-white text-end pe-5">AyoBantu</ul>
+                    <ul class="text-white text-end pe-5">SedekahIn</ul>
                     <ul class="text-white text-end pe-5">Hubungi Kami</ul>
                     <ul class="text-white text-end pe-5">Partner kami</ul>
                 </p>

@@ -41,8 +41,6 @@
   </div>
 </nav>
 
-<!-- FORM SUDAH PUNYA AKUN -->
-
 <section id="form">
   <form>
     <div class="container border mt-3">

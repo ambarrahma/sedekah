@@ -8,7 +8,7 @@
   </head>
   <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,36 +40,35 @@
   </div>
 </nav>
   <body>
-
-<!-- FORM DAFTAR AKUN -->
-
- <section id="form">   
-  <form method="POST" action="{{ route('login') }}">
+<section id="form">   
+  <form action="{{route('sedekah.formproses')}}" method="POST">
+    @csrf
+    @method('POST')
     <div class="container border mt-3">
         <p class="fw-bold p-3" style="font-size :3rem; ">Daftarkan Akun Anda </p>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email </label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <label for="exampleInputEmail1" class="form-label">Nama </label>
+            <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Kami tidak akan pernah membagikan email Anda dengan orang lain.</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input name="kata_sandi" type="password" class="form-control" id="exampleInputPassword1">
         </div>
         <div class="mb-3">
           <label for="exampleInputTelepon" class="form-label">Telepon</label>
-          <input type="text" class="form-control" id="exampleInputTelepon">
+          <input name="telepon" type="text" class="form-control" id="exampleInputTelepon">
       </div>
       <div class="mb-3">
           <label for="exampleInputAlamat" class="form-label">Alamat</label>
-          <input type="text" class="form-control" id="exampleInputAlamat">
+          <input name="alamat" type="text" class="form-control" id="exampleInputAlamat">
       </div>
 
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <a href="{{ route('akun') }}" class="mb-3 btn btn-primary">Daftar</a>
+        <button type="submit" class="mb-3 btn btn-primary">Daftar</button>
         <a href="{{ route('login')}}"> Sudah punya Akun ? </a >
   </div>
 </form>
@@ -78,7 +77,7 @@
     <div class="container mt-5">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
             <div class="col">
-            <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
+            <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
                         untuk Non-Bencana di 
                         Kementerian Sosial Republik Indonesia
@@ -92,7 +91,7 @@
                 <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
                 <p class="text-white">
                     <ul class="text-white text-end pe-5">Syarat dan Ketentuan</ul>
-                    <ul class="text-white text-end pe-5">AyoBantu</ul>
+                    <ul class="text-white text-end pe-5">SedekahIn</ul>
                     <ul class="text-white text-end pe-5">Hubungi Kami</ul>
                     <ul class="text-white text-end pe-5">Partner kami</ul>
                 </p>
