@@ -80,7 +80,8 @@
             <div class="col">
             <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
-                        untuk Non-Bencana di Kementerian Sosial Republik Indonesia
+                        untuk Non-Bencana di 
+                        Kementerian Sosial Republik Indonesia
                         dengan surat izin 341/HUK-PS/2023
                     </p>
                     <i class="bi bi-facebook" style="font-size :2rem; p-3"></i>
