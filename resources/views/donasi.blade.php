@@ -10,7 +10,7 @@
   <body>
   <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -102,7 +102,7 @@
     <div class="container mt-5">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
             <div class="col">
-            <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
+            <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
                         untuk Non-Bencana di Kementerian Sosial Republik Indonesia
                         dengan surat izin 341/HUK-PS/2023
@@ -110,12 +110,13 @@
                     <i class="bi bi-facebook" style="font-size :2rem; p-3"></i>
                     <i class="bi bi-instagram" style="font-size :2rem;" ></i>
             </div>
-
+  
+            
             <div class="col">
                 <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
                 <p class="text-white">
                     <ul class="text-white text-end pe-5">Syarat dan Ketentuan</ul>
-                    <ul class="text-white text-end pe-5">AyoBantu</ul>
+                    <ul class="text-white text-end pe-5">SedekahIn</ul>
                     <ul class="text-white text-end pe-5">Hubungi Kami</ul>
                     <ul class="text-white text-end pe-5">Partner kami</ul>
                 </p>

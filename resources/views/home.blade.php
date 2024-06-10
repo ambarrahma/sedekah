@@ -10,7 +10,7 @@
 <body>
  <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <a class="navbar-brand" >LOGO</a>
+    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -31,7 +31,7 @@
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " aria-disabled="true" href="{{route('sedekah.formsignup')}}">
+          <a class="nav-link  " aria-disabled="true" href="{{route('sedekah.form')}}">
           <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
           </a>
         </li>
@@ -54,36 +54,36 @@
             <p class="fw-bold mt-3">KATEGORI DONASI</p>
             <div class="col text-center">
                 <p style="font-size : 5rem;">
-                <i class="bi bi-coin" ></i>
+                <img src="/img/icon2.png" alt="" class="img-fluid" style="width: 100px; height: auto;">
                 </p>
-                <p class="fw-bold p-2">Donasi</p>
+                <p class="fw-bold p-2">Lingkungan</p>
             </div>
             <div class="col text-center">
             <p style="font-size : 5rem;">
-                <i class="bi bi-coin" ></i>
+            <img src="/img/icon3.png" alt="" class="img-fluid" style="width: 100px; height: auto;">
                 </p>
-                <p class="fw-bold p-2">Zakat</p>
+                <p class="fw-bold p-2">Pendidikan</p>
             </div>
             <div class="col text-center">
             <p style="font-size : 5rem;">
-                <i class="bi bi-coin" ></i>
+            <img src="/img/icon1.png" alt="" class="img-fluid" style="width: 100px; height: auto;">
                 </p>
-                <p class="fw-bold p-2">Even</p>
+                <p class="fw-bold p-2">Kesehatan</p>
             </div>
             <div class="col text-center">
             <p style="font-size : 5rem;">
-                <i class="bi bi-coin" ></i>
+            <img src="/img/icon4.png" alt="" class="img-fluid" style="width: 100px; height: auto;">
                 </p>
-                <p class="fw-bold p-2">Marchendise</p>
+                <p class="fw-bold p-2">Sosial</p>
             </div>
         </div>
     </div>
 </section>
 
 <section id="campaign"> 
-    <div class="container mt-5">
+    <div class="container mt-5 p-3">
         <div class="row justify-content-center">
-            <div class="col-3 text-center">
+            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <div class="card" style="width: 18rem;">
                 <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
                 <div class="card-body">
@@ -93,7 +93,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <div class="card" style="width: 18rem;">
                 <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
                 <div class="card-body">
@@ -103,7 +103,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-3 text-center">
+            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <div class="card" style="width: 18rem;">
                 <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
                 <div class="card-body">
@@ -113,7 +113,7 @@
                 </div>
             </div>
             </div>
-            <div class="col-3 text-center">
+        <!-- <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <div class="card" style="width: 18rem;">
                 <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
                 <div class="card-body">
@@ -122,7 +122,7 @@
                     <a href="{{route('donasi.form')}} " class="btn btn-primary">Donasi Sekarang</a>
                 </div>
             </div>
-            </div>
+            </div> -->
         </div>
     </div>
 </section>
@@ -137,7 +137,7 @@
                     </div>
                     <div class="col-9 pt-3">
                         <p class="fw-medium ">Masih ingin berdonasi untuk mereka ?</p>
-                        <a href="" class="btn btn-primary"> donasi sekarang</a>
+                        <a href="{{route('campaign.page')}}" class="btn btn-primary"> donasi sekarang</a>
                     </div>
                 </div>
             </div>
@@ -148,7 +148,7 @@
                     </div>
                     <div class="col-9 pt-3">
                         <p class="fw-medium ">Ayo galang dana bagi mereka</p>
-                        <a href="" class="btn btn-primary">galang dana</a>
+                        <a href="{{route('buat.form')}}" class="btn btn-primary">galang dana</a>
                     </div>
                 </div>
             </div>
@@ -189,7 +189,7 @@
     <div class="container mt-5">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
             <div class="col">
-            <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
+            <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
                         untuk Non-Bencana di Kementerian Sosial Republik Indonesia
                         dengan surat izin 341/HUK-PS/2023
@@ -202,7 +202,7 @@
                 <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
                 <p class="text-white">
                     <ul class="text-white text-end pe-5">Syarat dan Ketentuan</ul>
-                    <ul class="text-white text-end pe-5">AyoBantu</ul>
+                    <ul class="text-white text-end pe-5">SedekahIn</ul>
                     <ul class="text-white text-end pe-5">Hubungi Kami</ul>
                     <ul class="text-white text-end pe-5">Partner kami</ul>
                 </p>

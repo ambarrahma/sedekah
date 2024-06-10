@@ -30,7 +30,7 @@
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " aria-disabled="true" href="{{route('sedekah.formsignup')}}">
+          <a class="nav-link  " aria-disabled="true" href="{{route('sedekah.form')}}">
           <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
           </a>
         </li>
