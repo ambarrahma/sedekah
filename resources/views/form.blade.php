@@ -33,8 +33,7 @@
           <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
           </a>
         </li>
-      </ul>
-      
+      </ul> 
     </div>
 
   </div>

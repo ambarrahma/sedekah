@@ -10,7 +10,7 @@
   <body>
   <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
+    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 130px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -48,7 +48,10 @@
         <img src="/img/gambarsedekah.jpeg" alt="" class="img-fluid">
         </div>
          <div class="col-md-6 align-items-center">
-         <form >
+
+         <form action="{{route('sedekah.donasiproses')}}" method="POST" >
+          @csrf
+          @method('POST')
             <div class="mb-3">
                 <label for="nama" class="form-label">Nama</label>
                 <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>

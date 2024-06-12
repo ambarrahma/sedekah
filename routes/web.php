@@ -7,16 +7,22 @@ Route::get('/',[RegisterController::class,'index'])->name('sedekah.home');
 Route::get('/form',[RegisterController::class,'form'])->name('sedekah.form');
 Route::post('/formproses',[RegisterController::class,'store'])->name('sedekah.formproses');
 
+Route::get('/donasi',[RegisterController::class,'form'])->name('donasi.form');
+Route::post('/donasiproses',[RegisterController::class,'store'])->name('sedekah.donasiproses');
+
+
+
 Route::get('/login', function () {
     return view('login');
 })->name('login');
 
 Route::post('/login', [AuthController::class, 'login'])->name('login');
 
-
 Route::get('/donasi', function () {
     return view('donasi');
 })->name('donasi.form');
+
+
 
 Route::get('/verifikasi', function () {
     return view('verifikasi');

@@ -11,14 +11,14 @@ class RegisterController extends Controller
         return view('home');
     }
 
-    public function form(){
-        return view('form');
+    public function donasi(){
+        return view('donasi');
     }
 
     public function store(Request $request){
        Register::create($request->all());
 
-       return redirect()->route('akun');
+       return redirect()->route('donasi');
     }
 
 }

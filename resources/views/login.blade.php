@@ -9,7 +9,7 @@
   <body>
 <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">LOGO</a>
+    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -41,12 +41,14 @@
   </div>
 </nav>
 
+
+
 <section id="form">
   <form>
     <div class="container border mt-3">
         <p class="fw-bold p-3" style="font-size :3rem;">Login </p>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email </label>
+            <label for="exampleInputEmail1" class="form-label">Nama </label>
             <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
             <div id="emailHelp" class="form-text">Kami tidak akan pernah membagikan email Anda dengan orang lain.</div>
         </div>
@@ -69,7 +71,7 @@
     <div class="container mt-5">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
             <div class="col">
-            <p class="fw-bold mt-3 fs-2 text-white">ayobantu.com</p>
+            <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
                     <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
                         untuk Non-Bencana di Kementerian Sosial Republik Indonesia
                         dengan surat izin 341/HUK-PS/2023
