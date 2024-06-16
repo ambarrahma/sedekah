@@ -29,7 +29,7 @@
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link  " aria-disabled="true" href="{{route('sedekah.form')}}">
+          <a class="nav-link  " aria-disabled="true" href="{{route('register')}}">
           <i class="bi bi-person-circle" style="font-size: 2rem;"></i>
           </a>
         </li>
@@ -40,36 +40,37 @@
 </nav>
   <body>
 <section id="form">   
-  <form action="{{route('sedekah.formproses')}}" method="POST">
+  <form method="POST" action="{{ route('register') }}">
     @csrf
-    @method('POST')
     <div class="container border mt-3">
-        <p class="fw-bold p-3" style="font-size :3rem; ">Daftarkan Akun Anda </p>
+        <p class="fw-bold p-3" style="font-size :3rem;">Daftarkan Akun Anda</p>
         <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Nama </label>
-            <input name="nama" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">Kami tidak akan pernah membagikan email Anda dengan orang lain.</div>
+            <label class="form-label">Nama</label>
+            <input name="nama" type="text" class="form-control">
         </div>
         <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Kata Sandi</label>
-            <input name="kata_sandi" type="password" class="form-control" id="exampleInputPassword1">
+            <label class="form-label">Email</label>
+            <input name="email" type="email" class="form-control">
         </div>
         <div class="mb-3">
-          <label for="exampleInputTelepon" class="form-label">Telepon</label>
-          <input name="telepon" type="text" class="form-control" id="exampleInputTelepon">
-      </div>
-      <div class="mb-3">
-          <label for="exampleInputAlamat" class="form-label">Alamat</label>
-          <input name="alamat" type="text" class="form-control" id="exampleInputAlamat">
-      </div>
-
+            <label class="form-label">Kata Sandi</label>
+            <input name="password" type="password" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Telepon</label>
+            <input name="telepon" type="text" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Alamat</label>
+            <input name="alamat" type="text" class="form-control">
+        </div>
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
         <button type="submit" class="mb-3 btn btn-primary">Daftar</button>
-        <a href="{{ route('login')}}"> Sudah punya Akun ? </a >
-  </div>
+        <a href="{{ route('login') }}">Sudah punya Akun?</a>
+    </div>
 </form>
 </section>
 <section id="border">
