@@ -14,12 +14,11 @@ return new class extends Migration
         Schema::create('donasis', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('email');
+            $table->string('email'); 
             $table->integer('nominal_donasi');
             $table->string('metode_pembayaran');
-            $table->text('pesan');
+            $table->text('pesan')->nullable();
             $table->timestamps();
-
         });
     }
 

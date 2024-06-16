@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Register;
+use App\Models\Donasi;
 use Illuminate\Http\Request;
 
-class RegisterController extends Controller
+class DonasiController extends Controller
 {
     public function index(){
         return view('home');
@@ -16,7 +16,15 @@ class RegisterController extends Controller
     }
 
     public function store(Request $request){
-       Register::create($request->all());
+        $request->validate([
+            'nama'=>'required|string',
+            'email'=>'required|email',
+            'nominal_donasi'=>'required|integer',
+            'metode_pembayaran'=>'required|string',
+            'pesan'=>'nullable|string',
+        ]);
+        
+       Donasi::create($request->all());
 
        return redirect()->route('donasi');
     }

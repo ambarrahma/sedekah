@@ -61,8 +61,8 @@
                 <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan alamat email Anda" required>
             </div>
             <div class="mb-3">
-                <label for="nominal" class="form-label">Nominal Donasi</label>
-                <input type="number" class="form-control" id="nominal" name="nominal" placeholder="Masukkan nominal donasi" required>
+                <label for="nominal_donasi" class="form-label">Nominal Donasi</label>
+                <input type="number" class="form-control" id="nominal_donasi" name="nominal_donasi" placeholder="Masukkan nominal donasi" required>
             </div>
             <div class="mb-3">
                 <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>

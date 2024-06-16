@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('registers', function (Blueprint $table) {
             $table->id();
             $table->string('nama');
-            $table->string('kata_sandi');
+            $table->string('kata_sandi')->default('default_password')->change();
             $table->string('telepon')->nullable();
             $table->string('alamat');
             $table->timestamps();
@@ -27,6 +27,8 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('registers');
+        Schema::dropIfExists('registers', function (Blueprint $table){
+            $table->string('kata_sandi')->default(null)->change();
+        });
     }
 };
