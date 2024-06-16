@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>SEDEKAH</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
@@ -36,11 +36,14 @@
         </ul>
         <ul class="navbar-nav flex-column mt-auto">
           <li class="nav-item">
-            <a class="nav-link" href="/">Kembali ke Halaman Utama</a>
+            <a class="nav-link" href="/homeverifikasi">Kembali ke Halaman Utama</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/logout">Keluar</a>
+            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
           </li>
+          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+            @csrf
+        </form>
         </ul>
       </div>
     </div>
@@ -60,7 +63,7 @@
     <div class="container justify-content-center mt-2">
         <div class="row border rounded justify-content-center mt-2">
             <div class="col justify-content-center ">
-                    <p class="text-dark " style="font-size : 5rem;">HELLO, DEWI DINI</p>
+                <p class="text-dark" style="font-size: 5rem;">HELLO, {{ auth()->user()->nama }}</p>
                     <p class="text-secondary">Platform yang membantu #TemanPeduli untuk menggalang dana.</p>
             </div>
             <div class="row border justify-content-center mt-2" style="background-color: #DEEBFB; color: #0D6EFD;">
@@ -137,14 +140,6 @@
                             <p class="card-text">Tanggal Donasi: 2024-06-01</p>
                             <p class="card-text">Jumlah: Rp 500.000</p>
                         </div>
-                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
-                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
-                            </button>
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
-                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 
@@ -155,14 +150,6 @@
                             <p class="card-text">Tanggal Donasi: 2024-06-08</p>
                             <p class="card-text">Jumlah: Rp 300.000</p>
                         </div>
-                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
-                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
-                            </button>
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
-                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
-                            </button>
-                        </div>
                     </div>
                 </div>
                 <div class="col-12 mb-3 donation-item" data-date="2024-06-15">
@@ -171,14 +158,6 @@
                             <h5 class="card-title">Donasi untuk Bencana Alam</h5>
                             <p class="card-text">Tanggal Donasi: 2024-06-15</p>
                             <p class="card-text">Jumlah: Rp 700.000</p>
-                        </div>
-                        <div class="col" style="position: relative; height: 100px; border: 1px solid #ccc;">
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 60px; background-color: green;">
-                                <i class="bi bi-repeat" style="color: white; font-size: 32px;"></i>
-                            </button>
-                            <button class="btn m-4" style="position: absolute; bottom: 0; right: 0; background-color: red;">
-                                <i class="bi bi-trash3" style="color: white; font-size: 32px;"></i>
-                            </button>
                         </div>
                     </div>
                 </div>
