@@ -11,6 +11,8 @@ class Donasi extends Model
     
     protected $table = 'donasis';
 
+    public $timestamps = true;
+
     protected $fillable = [
         'nama',
         'email',

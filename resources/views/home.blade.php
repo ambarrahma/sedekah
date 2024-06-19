@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -5,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SEDEKAH</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
 <body>
@@ -41,8 +43,43 @@
 
   </div>
 </nav>
+{{-- @extends('layouts.app')
 
+@section('content')
 <section id="header">
+    <div class="banner-image">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="gambar/promo 2.png" class="d-block w-100" alt="banner">
+                </div>
+                <div class="carousel-item">
+                    <img src="gambar/promo.png" class="d-block w-100" alt="banner">
+                </div>
+                <div class="carousel-item">
+                    <img src="gambar/promo 3.png" class="d-block w-100" alt="banner">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+@endsection --}}
+
+
+
     <div class="container-fluid mt-3">
         <img src="/img/sedekah1.png" alt="" class="img-fluid">
     </div>
@@ -186,6 +223,38 @@
     </div>
 </section>
 
+{{-- <br>
+
+@extends('layouts.app')
+
+@section('content')
+<div class="container">
+    <div class="row">
+        @foreach($donasis as $donasi )
+        <div class="col-md-4">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h5 class="card-title">{{ $donasi->nama }}</h5>
+                    <p class="card-text"><strong>Email:</strong> {{ $donasi->email->format('') }}</p>
+                    <p class="card-text"><strong>Nominal Donasi:</strong> {{ $donasi->nominal_donasi}}</p>
+                    <p class="card-text"><strong>Metode Pembayaran:</strong> {{ $donasi->metode_pembayaran }}</p>
+                    <p class="card-text"><strong>Pesan:</strong> {{ $donasi->pesan }}</p>
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+@endsection
+ --}}
+
+{{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Donasi</a>
+</nav> --}}
+{{-- <div class="container mt-4">
+    @yield('content')
+</div> --}}
+
 <section id="border">
     <div class="container mt-5">
         <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
@@ -213,5 +282,6 @@
 </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </body>
 </html>

@@ -2,17 +2,14 @@
 
 namespace App\Http\Controllers;
 
-<<<<<<< HEAD
-use App\Models\Donasi;
-=======
->>>>>>> aa620a060fb3187b95b6c85d08563dce2748cbe6
 use Illuminate\Http\Request;
+use App\Models\Donasi;
 
-class DonasiController extends Controller
+class DonasiController extends Controller 
 {
-<<<<<<< HEAD
     public function index(){
-        return view('home');
+        $donasis = Donasi::all();
+        return view('home', compact('donasis'));
     }
 
     public function donasi(){
@@ -27,13 +24,19 @@ class DonasiController extends Controller
             'metode_pembayaran'=>'required|string',
             'pesan'=>'nullable|string',
         ]);
+
+
         
        Donasi::create($request->all());
 
-       return redirect()->route('donasi');
+       return redirect()->route('donasi.form');
     }
 
-=======
-    // ... metode controller Anda
->>>>>>> aa620a060fb3187b95b6c85d08563dce2748cbe6
+    public function show() {
+        $donasis = Donasi::all();
+        // dd($donasis);
+        return view('donasi-show', compact('donasis'));
+    }
+
+
 }
