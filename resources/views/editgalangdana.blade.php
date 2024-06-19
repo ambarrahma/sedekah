@@ -49,7 +49,6 @@
                 @csrf
                 @method('PUT')
                 <div class="mb-3">
-                    <label for="gambar" class="form-label">Gambar</label>
                     @if ($galangDana->gambar)
                         <img src="{{ asset('storage/images/'.$galangDana->gambar) }}" alt="Gambar Galang Dana" style="max-width: 200px; max-height: 200px;">
                     @endif
