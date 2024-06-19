@@ -25,6 +25,9 @@
           </a>
         </li>
         <li class="nav-item">
+            <a class="nav-link fw-bold mt-2" href="/home">Home</a>
+      </li>
+        <li class="nav-item">
           <a class="nav-link fw-bold mt-2" href="#donasi">Donation</a>
         </li>
         <li class="nav-item">

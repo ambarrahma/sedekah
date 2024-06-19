@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold mt-2" href="#donasi">Donation</a>
+          <a class="nav-link fw-bold mt-2" href="/campaign">Donation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
@@ -156,6 +156,7 @@
         </div>
     </div>
 </section>
+
 
 <section id="riwayat">
     <div class="container mt-5">

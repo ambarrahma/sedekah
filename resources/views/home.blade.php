@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold mt-2" href="#donasi">Donation</a>
+          <a class="nav-link fw-bold mt-2" href="/campaign.page">Donation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
@@ -149,7 +149,7 @@
                     </div>
                     <div class="col-9 pt-3">
                         <p class="fw-medium ">Ayo galang dana bagi mereka</p>
-                        <a href="{{route('buat.form')}}" class="btn btn-primary">galang dana</a>
+                        <a href="{{route('register')}}" class="btn btn-primary">galang dana</a>
                     </div>
                 </div>
             </div>
@@ -185,6 +185,8 @@
         </div>
     </div>
 </section>
+
+
 
 <section id="border">
     <div class="container mt-5">
