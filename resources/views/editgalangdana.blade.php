@@ -45,9 +45,16 @@
                     {{ session('success') }}
                 </div>
             @endif
-            <form action="{{ route('galang_dana.update', $galangDana->id) }}" method="POST" id="editDonationForm">
+            <form action="{{ route('galang_dana.update', $galangDana->id) }}" method="POST" id="editForm" enctype="multipart/form-data">
                 @csrf
                 @method('PUT')
+                <div class="mb-3">
+                    <label for="gambar" class="form-label">Gambar</label>
+                    @if ($galangDana->gambar)
+                        <img src="{{ asset('storage/images/'.$galangDana->gambar) }}" alt="Gambar Galang Dana" style="max-width: 200px; max-height: 200px;">
+                    @endif
+                    <input type="file" class="form-control" id="gambar" name="gambar" accept="image/*">
+                </div>
                 <div class="mb-3">
                     <label for="nama_galang_dana" class="form-label">Nama Galang Dana</label>
                     <input type="text" class="form-control" id="nama_galang_dana" name="nama_galang_dana" value="{{ $galangDana->nama_galang_dana }}" required>
