@@ -11,15 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('donasis', function (Blueprint $table) {
+        Schema::create('galang_dana', function (Blueprint $table) {
             $table->id();
-            $table->string('nama');
-            $table->string('email');
-            $table->integer('nominal_donasi');
-            $table->string('metode_pembayaran');
-            $table->text('pesan');
+            $table->string('nama_galang_dana');
+            $table->string('nama_organisasi');
+            $table->string('kategori_donasi');
+            $table->bigInteger('target_donasi')->change();
+            $table->text('deskripsi');
             $table->timestamps();
-
         });
     }
 
@@ -28,7 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('donasis');
+        Schema::dropIfExists('galang_dana');
     }
 };
-

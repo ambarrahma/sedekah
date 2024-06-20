@@ -8,58 +8,35 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
 <body>
-<nav class="navbar bg-body-tertiary fixed-top">
-  <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand fw-bold" href="#">SedekahIn</a>
-    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-      <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">SedekahIn</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    <nav class="navbar navbar-expand-lg border-bottom ">
+        <div class="container-fluid">
+        <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link fw-bold mt-2" href="/homeverifikasi">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link fw-bold mt-2" href="/campaign.page">Donation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link fw-bold mt-2" href="#border">About</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link fw-bold mt-2" style="background-color: red; color: white; border-radius: 10px;" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
+            </li>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+          </ul>
+        </div>
       </div>
-      <div class="offcanvas-body d-flex flex-column justify-content-between">
-        <ul class="navbar-nav flex-column">
-          <li class="nav-item">
-            <a class="nav-link" href="#dashboard">Dashboard</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#total">Pencairan Dana</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#daftar">Riwayat Donasi</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#buatdonasi">Buat Donasi</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav flex-column mt-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="/homeverifikasi">Kembali ke Halaman Utama</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Keluar</a>
-          </li>
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-            @csrf
-        </form>
-        </ul>
-      </div>
-    </div>
-  </div>
-</nav>
+    </nav>
 
 <section id="dashboard">
-    <div class="container justify-content-center p-4 mt-5">
-        <div class="row border rounded  justify-content-center text-white"  >
-            <div class="col " style=background-color:#DEEBFB;>
-                    <p class="text-white">Dapatkan "Hadiah Kebaikan berupa Saldo Peduli dengan membagikan kode referral. 
-                        Yuk #bantutakgentar dan terus kumpulin "Hadiah Kebaikan" yang melimpah dari Ayobantu" 
-                    </p>
-            </div>
-        </div>
-    </div>
     <div class="container justify-content-center mt-2">
         <div class="row border rounded justify-content-center mt-2">
             <div class="col justify-content-center ">
@@ -109,11 +86,11 @@
     <div class="container mt-5">
         <div class="row">
             <div class="col text-center" style="background-color: #950000; color: white; padding: 20px; border-radius: 5px;">
-                <p style="font-size: 1.5rem; margin: 0;">Buat Donasi Anda</p>
+                <p style="font-size: 1.5rem; margin: 0;">Buat Galang Dana Anda</p>
                 <a href="{{route('buat.form')}}" 
                     class="btn" 
                     style="background-color: #ffcc00; color: #950000; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 5px; margin-top: 20px;">
-                        Mulai Donasi
+                        Mulai Galang Dana
                 </a>
 
             </div>
@@ -121,6 +98,44 @@
     </div>
     </div>
 </section>
+
+<section id="daftar">
+    <div class="container border mt-5">
+        <h2 class="text-center pt-2 mt-3 border pb-2 text-white" style="background-color:#950000;">Daftar Galang Dana Anda</h2>
+        <div class="row mt-4">
+            <div class="col-md-3">
+                <label for="filter" class="form-label">Filter Per Minggu</label>
+                <input type="week" class="form-control" id="filter" onchange="filterDonations()">
+            </div>
+        </div>
+        <div class="row mt-4" id="donation-list">
+            <!-- Daftar Galang Dana -->
+            @foreach ($galangDanaList as $galangDana)
+                <div class="col-12 mb-3 donation-item" data-date="{{ $galangDana->created_at->format('Y-m-d') }}">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('storage/images/'.$galangDana->gambar) }}" alt="Gambar Galang Dana" style="max-width: 200px; max-height: 200px;">
+                            <h5 class="card-title">{{ $galangDana->nama_galang_dana }}</h5>
+                            <p class="card-text">Nama Organisasi: {{ $galangDana->nama_organisasi }}</p>
+                            <p class="card-text">Kategori Donasi: {{ $galangDana->kategori_donasi }}</p>
+                            <p class="card-text">Tanggal Donasi: {{ $galangDana->created_at->format('Y-m-d') }}</p>
+                            <p class="card-text">Jumlah: Rp {{ number_format($galangDana->target_donasi, 0, ',', '.') }}</p>
+                            <p class="card-text">Deskripsi: {{ $galangDana->deskripsi }}</p>
+                            <a href="{{ route('galang_dana.edit', $galangDana->id) }}" class="btn btn-primary">Edit</a>
+                            <form action="{{ route('galang_dana.destroy', $galangDana->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+
+
 
 <section id="daftar">
     <div class="container  border mt-5">
@@ -164,6 +179,8 @@
             </div>
         </div>
 </section>
+
+
 
 <section id="border">
     <div class="container mt-3">

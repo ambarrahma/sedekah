@@ -8,11 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Donasi extends Model
 {
     use HasFactory;
-    
-    protected $table = 'donasis';
-
-    public $timestamps = true;
-
     protected $fillable = [
         'nama',
         'email',

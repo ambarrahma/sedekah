@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -6,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SEDEKAH</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
 <body>
@@ -27,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold mt-2" href="#donasi">Donation</a>
+          <a class="nav-link fw-bold mt-2" href="/campaign.page">Donation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold mt-2" href="#border">About</a>
@@ -43,43 +41,8 @@
 
   </div>
 </nav>
-{{-- @extends('layouts.app')
 
-@section('content')
 <section id="header">
-    <div class="banner-image">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="gambar/promo 2.png" class="d-block w-100" alt="banner">
-                </div>
-                <div class="carousel-item">
-                    <img src="gambar/promo.png" class="d-block w-100" alt="banner">
-                </div>
-                <div class="carousel-item">
-                    <img src="gambar/promo 3.png" class="d-block w-100" alt="banner">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-            </button>
-        </div>
-    </div>
-</section>
-@endsection --}}
-
-
-
     <div class="container-fluid mt-3">
         <img src="/img/sedekah1.png" alt="" class="img-fluid">
     </div>
@@ -186,7 +149,7 @@
                     </div>
                     <div class="col-9 pt-3">
                         <p class="fw-medium ">Ayo galang dana bagi mereka</p>
-                        <a href="{{route('buat.form')}}" class="btn btn-primary">galang dana</a>
+                        <a href="{{route('register')}}" class="btn btn-primary">galang dana</a>
                     </div>
                 </div>
             </div>
@@ -223,8 +186,8 @@
     </div>
 </section>
 
-{{-- <br>
 
+<<<<<<< HEAD
 @extends('layouts.app')
 
 @section('content')
@@ -254,6 +217,8 @@
 {{-- <div class="container mt-4">
     @yield('content')
 </div>
+=======
+>>>>>>> a9fbb25b7fb01326add47e4c71e27f68d3e58eda
 
 <section id="border">
     <div class="container mt-5">
@@ -282,6 +247,5 @@
 </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 </body>
 </html>
