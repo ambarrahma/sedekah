@@ -223,7 +223,7 @@
     </div>
 </section>
 
-<br>
+{{-- <br>
 
 @extends('layouts.app')
 
@@ -245,8 +245,8 @@
         @endforeach
     </div>
 </div>
-@endsection
- --}}
+@endsection --}}
+ 
 
 {{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Donasi</a>
