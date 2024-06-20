@@ -223,22 +223,22 @@
     </div>
 </section>
 
-{{-- <br>
+<br>
 
 @extends('layouts.app')
 
 @section('content')
 <div class="container">
     <div class="row">
-        @foreach($donasis as $donasi )
+        @foreach($donasis as $donasis )
         <div class="col-md-4">
             <div class="card mb-4">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $donasi->nama }}</h5>
-                    <p class="card-text"><strong>Email:</strong> {{ $donasi->email->format('') }}</p>
-                    <p class="card-text"><strong>Nominal Donasi:</strong> {{ $donasi->nominal_donasi}}</p>
-                    <p class="card-text"><strong>Metode Pembayaran:</strong> {{ $donasi->metode_pembayaran }}</p>
-                    <p class="card-text"><strong>Pesan:</strong> {{ $donasi->pesan }}</p>
+                    <h5 class="card-title">{{ $donasis->nama }}</h5>
+                    <p class="card-text"><strong>Email:</strong> {{ $donasis->email->format('') }}</p>
+                    <p class="card-text"><strong>Nominal Donasi:</strong> {{ $donasis->nominal_donasi}}</p>
+                    <p class="card-text"><strong>Metode Pembayaran:</strong> {{ $donasis->metode_pembayaran }}</p>
+                    <p class="card-text"><strong>Pesan:</strong> {{ $donasis->pesan }}</p>
                 </div>
             </div>
         </div>
@@ -253,7 +253,7 @@
 </nav> --}}
 {{-- <div class="container mt-4">
     @yield('content')
-</div> --}}
+</div>
 
 <section id="border">
     <div class="container mt-5">

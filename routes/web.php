@@ -15,7 +15,6 @@ Route::post('/formproses',[RegisterController::class,'store'])->name('sedekah.fo
 Route::get('/',[DonasiController::class,'index'])->name('donasi.home');
 Route::get('/donasi',[DonasiController::class,'donasi'])->name('donasi.form');
 Route::post('/donasiproses',[DonasiController::class,'store'])->name('sedekah.donasiproses');
-// Route::post('/donasi-proses', [DonasiController::class, 'store'])->name('sedekah.donasiproses');
 
 // Route::get('/donasi', [DonasiController::class, 'donasi'])->name('donasi');
 Route::post('/donasi/store', [DonasiController::class, 'store'])->name('home');
