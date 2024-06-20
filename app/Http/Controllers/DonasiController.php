@@ -35,4 +35,15 @@ class DonasiController extends Controller
         // Redirect ke halaman yang sesuai dengan pesan sukses
         return redirect()->back()->with('success', 'Donasi berhasil dikirim!');
     }
+
+    public function home()
+    {
+        // Ambil data donasi dari database
+        $donasis = Donasi::all();
+
+        // Kirim data ke view home
+        return view('home', ['donasis' => $donasis]);
+    }
+
+    
 }

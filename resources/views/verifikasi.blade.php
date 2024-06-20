@@ -148,34 +148,11 @@
             </div>
             <div class="row mt-4" id="donation-list">
                 <!-- Daftar Donasi -->
-                <div class="col-12 mb-3 donation-item" data-date="2024-06-01">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Donasi untuk Pendidikan</h5>
-                            <p class="card-text">Tanggal Donasi: 2024-06-01</p>
-                            <p class="card-text">Jumlah: Rp 500.000</p>
-                        </div>
-                    </div>
+
+                <div class="container">
+                    
                 </div>
-                
-                <div class="col-12 mb-3 donation-item" data-date="2024-06-08">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Donasi untuk Kesehatan</h5>
-                            <p class="card-text">Tanggal Donasi: 2024-06-08</p>
-                            <p class="card-text">Jumlah: Rp 300.000</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 mb-3 donation-item" data-date="2024-06-15">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Donasi untuk Bencana Alam</h5>
-                            <p class="card-text">Tanggal Donasi: 2024-06-15</p>
-                            <p class="card-text">Jumlah: Rp 700.000</p>
-                        </div>
-                    </div>
-                </div>
+
             </div>
         </div>
 </section>

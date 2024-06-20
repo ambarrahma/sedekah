@@ -187,36 +187,34 @@
 </section>
 
 
-<<<<<<< HEAD
-{{-- @extends('layouts.app')
 
-@section('content')
-<div class="container">
-    <div class="row">
-        @foreach($donasis as $donasis )
-        <div class="col-md-4">
-            <div class="card mb-4">
+<div class="container mt-5">
+    <div class="container">
+        <h1>Donasi</h1>
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @foreach($donasis as $donasi)
+            <div class="card mb-3">
                 <div class="card-body">
-                    <h5 class="card-title">{{ $donasis->nama }}</h5>
-                    <p class="card-text"><strong>Email:</strong> {{ $donasis->email->format('') }}</p>
-                    <p class="card-text"><strong>Nominal Donasi:</strong> {{ $donasis->nominal_donasi}}</p>
-                    <p class="card-text"><strong>Metode Pembayaran:</strong> {{ $donasis->metode_pembayaran }}</p>
-                    <p class="card-text"><strong>Pesan:</strong> {{ $donasis->pesan }}</p>
+                    <h5 class="card-title">{{ $donasi->nama }}</h5>
+                    {{-- <p class="card-text">Email: {{ $donasi->email }}</p> --}}
+                    <p class="card-text">Donasi: {{ $donasi->nominal_donasi }}</p>
+                    <p class="card-text">Pesan: {{ $donasi->pesan }}</p>
+                    {{-- <p class="card-text">Metode Pembayaran: {{ $donasi->metode_pembayaran }}</p> --}}
+
                 </div>
             </div>
-        </div>
         @endforeach
     </div>
 </div>
-@endsection --}} 
- 
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Donasi</a>
-</nav>
 
-=======
->>>>>>> a9fbb25b7fb01326add47e4c71e27f68d3e58eda
+
+
 
 <section id="border">
     <div class="container mt-5">
