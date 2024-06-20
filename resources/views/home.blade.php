@@ -188,7 +188,7 @@
 
 
 <<<<<<< HEAD
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 @section('content')
 <div class="container">
@@ -208,15 +208,13 @@
         @endforeach
     </div>
 </div>
-@endsection --}}
+@endsection --}} 
  
 
-{{-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Donasi</a>
-</nav> --}}
-{{-- <div class="container mt-4">
-    @yield('content')
-</div>
+</nav>
+
 =======
 >>>>>>> a9fbb25b7fb01326add47e4c71e27f68d3e58eda
 

@@ -48,38 +48,42 @@
         <img src="/img/gambarsedekah.jpeg" alt="" class="img-fluid">
         </div>
          <div class="col-md-6 align-items-center">
-
-         <form action="{{route('sedekah.donasiproses')}}" method="POST" >
-          @csrf
-          @method('POST')
-            <div class="mb-3">
-                <label for="nama" class="form-label">Nama</label>
-                <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
-            </div>
-            <div class="mb-3">
-                <label for="email" class="form-label">Email</label>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan alamat email Anda" required>
-            </div>
-            <div class="mb-3">
-                <label for="nominal" class="form-label">Nominal Donasi</label>
-                <input type="number" class="form-control" id="nominal" name="nominal" placeholder="Masukkan nominal donasi" required>
-            </div>
-            <div class="mb-3">
-                <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>
-                <select class="form-select" id="metode_pembayaran" name="metode_pembayaran" required>
-                    <option value="">Pilih metode pembayaran</option>
-                    <option value="transfer_bank">Transfer Bank</option>
-                    <option value="gopay">GoPay</option>
-                    <option value="ovo">OVO</option>
-                    <option value="dana">DANA</option>
-                </select>
-            </div>
-            <div class="mb-3">
-                <label for="pesan" class="form-label">Pesan (opsional)</label>
-                <textarea class="form-control" id="pesan" name="pesan" rows="3" placeholder="Tambahkan pesan atau catatan (opsional)"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Kirim Donasi</button>
-        </form>
+          @if(session('success'))
+          <div class="alert alert-success">
+              {{ session('success') }}
+          </div>
+      @endif
+      <form action="{{ route('donasi.store') }}" method="POST">
+        @csrf
+        <div class="mb-3">
+            <label for="nama" class="form-label">Nama</label>
+            <input type="text" class="form-control" id="nama" name="nama" placeholder="Masukkan nama Anda" required>
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Masukkan alamat email Anda" required>
+        </div>
+        <div class="mb-3">
+            <label for="nominal" class="form-label">Nominal Donasi</label>
+            <input type="number" class="form-control" id="nominal" name="nominal_donasi" placeholder="Masukkan nominal donasi" required>
+        </div>
+        <div class="mb-3">
+            <label for="metode_pembayaran" class="form-label">Metode Pembayaran</label>
+            <select class="form-select" id="metode_pembayaran" name="metode_pembayaran" required>
+                <option value="">Pilih metode pembayaran</option>
+                <option value="transfer_bank">Transfer Bank</option>
+                <option value="gopay">GoPay</option>
+                <option value="ovo">OVO</option>
+                <option value="dana">DANA</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="pesan" class="form-label">Pesan (opsional)</label>
+            <textarea class="form-control" id="pesan" name="pesan" rows="3" placeholder="Tambahkan pesan atau catatan (opsional)"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Kirim Donasi</button>
+    </form>
+    
 
             </div>
         </div>
