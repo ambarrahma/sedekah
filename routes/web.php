@@ -28,6 +28,7 @@ Route::put('/galang-dana/{id}', [GalangDanaController::class, 'update'])->name('
 Route::delete('/galang-dana/{id}', [GalangDanaController::class, 'destroy'])->name('galang_dana.destroy');
 
 Route::get('/', [DonasiController::class, 'home'])->name('home');
+Route::get('/verifikasi', [DonasiController::class, 'verifikasi'])->name('verifikasi')->middleware('auth');
 Route::get('/donasi', [DonasiController::class, 'create'])->name('donasi.create');
 Route::post('/donasi', [DonasiController::class, 'store'])->name('donasi.store');
 

@@ -45,5 +45,9 @@ class DonasiController extends Controller
         return view('home', ['donasis' => $donasis]);
     }
 
-    
+    public function verifikasi()
+    {
+        $donasis = Donasi::all();
+        return view('verifikasi', ['donasis' => $donasis]);
+    }
 }

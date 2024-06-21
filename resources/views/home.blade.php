@@ -10,7 +10,7 @@
 <body>
  <nav class="navbar navbar-expand-lg border-bottom ">
     <div class="container-fluid">
-    <img src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
+    <img href="{{ route('home') }}" src="/img/logo.png" alt="" class="img-fluid" style="width: 150px; height: auto;">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -25,7 +25,7 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fw-bold mt-2" href="/campaign.page">Donation</a>
+            <a class="nav-link fw-bold mt-2" href="{{ route('campaign.page') }}">Donation</a>
         </li>
         <li class="nav-item">
           <a class="nav-link fw-bold mt-2" href="#border">About</a>

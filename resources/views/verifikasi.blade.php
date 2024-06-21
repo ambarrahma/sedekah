@@ -17,11 +17,11 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
             <li class="nav-item">
-              <a class="nav-link fw-bold mt-2" href="/homeverifikasi">Home</a>
+                <a class="nav-link fw-bold mt-2" href="{{ route('homeverifikasi') }}">Home</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link fw-bold mt-2" href="/campaign.page">Donation</a>
-              </li>
+                <a class="nav-link fw-bold mt-2" href="{{ route('campaign.page') }}">Donation</a>
+            </li>
               <li class="nav-item">
                 <a class="nav-link fw-bold mt-2" href="#border">About</a>
               </li>
@@ -150,7 +150,17 @@
                 <!-- Daftar Donasi -->
 
                 <div class="container">
-                    
+                    {{-- @foreach($donasis as $donasi)
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $donasi->nama }}</h5>
+                            <p class="card-text">Email: {{ $donasi->email }}</p>
+                            <p class="card-text">Nominal Donasi: {{ $donasi->nominal_donasi }}</p>
+                            <p class="card-text">Metode Pembayaran: {{ $donasi->metode_pembayaran }}</p>
+                            <p class="card-text">Pesan: {{ $donasi->pesan }}</p>
+                        </div>
+                    </div>
+                @endforeach --}}
                 </div>
 
             </div>
