@@ -66,7 +66,7 @@ class AuthController extends Controller
         // Setelah registrasi, otomatis lakukan login
         Auth::login($user);
     
-        return redirect()->route('verifikasi');
+        return redirect()->route('login');
     }
 
     public function logout(Request $request)
