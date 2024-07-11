@@ -137,7 +137,7 @@
 
 
 
-<section id="daftar">
+{{-- <section id="daftar">
     <div class="container  border mt-5">
         <h2 class="text-center pt-2 mt-3 border pb-2 text-white" style="background-color:#950000;":>Daftar Donasi Anda</h2>
             <div class="row mt-4">
@@ -150,7 +150,7 @@
                 <!-- Daftar Donasi -->
 
                 <div class="container">
-                    {{-- @foreach($donasis as $donasi)
+                    @foreach($donasis as $donasi)
                     <div class="card mb-3">
                         <div class="card-body">
                             <h5 class="card-title">{{ $donasi->nama }}</h5>
@@ -160,12 +160,12 @@
                             <p class="card-text">Pesan: {{ $donasi->pesan }}</p>
                         </div>
                     </div>
-                @endforeach --}}
+                @endforeach
                 </div>
 
             </div>
         </div>
-</section>
+</section> --}}
 
 
 

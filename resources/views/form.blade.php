@@ -71,7 +71,7 @@
             <input type="checkbox" class="form-check-input" id="exampleCheck1">
             <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button href="{{ route('homeverifikasi') }}" type="submit" class="mb-3 btn btn-primary">Daftar</button>
+        <button href="{{ route('verifikasi') }}" type="submit" class="mb-3 btn btn-primary">Daftar</button>
         <a href="{{ route('login') }}">Sudah punya Akun?</a>
     </div>
 </form>
