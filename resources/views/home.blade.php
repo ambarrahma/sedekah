@@ -80,8 +80,20 @@
     </div>
 </section>
 
+
+<section id="campaign_tetap">
+    <div class="container mt-5 p-3 ">
+        <p>Donasi bersama SedekahIn </p>
+
+        <div class="row" id="galangDanaContainer">
+            
+        </div>
+    </div>
+</section>
+
 <section id="campaign"> 
-    <div class="container mt-5 p-3">
+    <div class="container mt-2 p-2">
+        <p>Donasi Umum</p>
         <div class="row justify-content-center">
             <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <div class="card" style="width: 18rem;">
@@ -114,16 +126,6 @@
                 </div>
             </div>
             </div>
-        <!-- <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-            <div class="card" style="width: 18rem;">
-                <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="{{route('donasi.form')}} " class="btn btn-primary">Donasi Sekarang</a>
-                </div>
-            </div>
-            </div> -->
         </div>
     </div>
 </section>
@@ -243,5 +245,37 @@
 </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        $(document).ready(function(){
+            $.ajax({
+                url: "https://gist.githubusercontent.com/ambarrahma/15c9bebae0c2b3a7a2d34222f3f29123/raw/81ad782db6a724b286aecb02dbff03b206919247/galang_dana.json",
+                method: "GET",
+                dataType: "json",
+                success: function(data) {
+                    var container = $('#galangDanaContainer');
+                    data.forEach(function(item) {
+                        var html = '<div class="col-12 col-md-6 col-lg-4 text-center mb-5">' +
+                            '<div class="card" style="width: 18rem;">' +
+                            '<img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">' +
+                            '<div class="card-body">' +
+                            '<h5 class="card-title">' + item.nama_galang_dana + '</h5>' +
+                            '<p class="card-text">' + item.deskripsi + '</p>' +
+                            '<a href="{{route('donasi.tetap')}}?id='+item.id+'" class="btn btn-primary">Donasi Sekarang</a>' +
+                            '</div>' +
+                            '</div>' +
+                            '</div>';
+                        container.append(html);
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.error("Terjadi kesalahan saat mengambil data: ", status, error);
+                }
+            });
+        });
+    </script>
+
+
 </body>
 </html>

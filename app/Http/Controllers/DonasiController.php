@@ -50,4 +50,5 @@ class DonasiController extends Controller
         $donasis = Donasi::all();
         return view('verifikasi', ['donasis' => $donasis]);
     }
+    
 }

@@ -93,7 +93,8 @@
     </div>
     <div class="container border mt-3 ">
     <div class="mt-3 justify-content-center ">
-    <h2 class="fw-bold">Sedekah Jumat</h2>
+    
+      <h2 class="fw-bold">Sedekah Jumat</h2>
     <p>
     Marilah kita sambut Jumat Berkah dengan penuh kebaikan dan keberkahan. Mari kita bersama-sama melangkah 
     untuk memberikan sedekah kepada sesama yang membutuhkan. Setiap rupiah yang kita berikan akan menjadi 

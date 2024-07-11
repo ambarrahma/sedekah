@@ -5,7 +5,6 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\GalangDanaController;
 use App\Http\Controllers\DonasiController;
 
-
 Route::get('/', [AuthController::class, 'index'])->name('home');
 
 Route::get('/',[RegisterController::class,'index'])->name('sedekah.home');
@@ -45,3 +44,7 @@ Route::get('/donasi', function () {
 Route::get('/campaign', function () {
     return view('campaign');
 })->name('campaign.page');
+
+Route::get('/donasi-tetap', function () {
+    return view('donasi_tetap');
+})->name('donasi.tetap');
