@@ -110,27 +110,51 @@
         </div>
         <div class="row mt-4" id="donation-list">
             <!-- Daftar Galang Dana -->
-            @foreach ($galangDanaList as $galangDana)
-                <div class="col-12 mb-3 donation-item" data-date="{{ $galangDana->created_at->format('Y-m-d') }}">
-                    <div class="card">
-                        <div class="card-body">
-                            <img src="{{ asset('storage/images/'.$galangDana->gambar) }}" alt="Gambar Galang Dana" style="max-width: 200px; max-height: 200px;">
-                            <h5 class="card-title">{{ $galangDana->nama_galang_dana }}</h5>
-                            <p class="card-text">Nama Organisasi: {{ $galangDana->nama_organisasi }}</p>
-                            <p class="card-text">Kategori Donasi: {{ $galangDana->kategori_donasi }}</p>
-                            <p class="card-text">Tanggal Donasi: {{ $galangDana->created_at->format('Y-m-d') }}</p>
-                            <p class="card-text">Jumlah: Rp {{ number_format($galangDana->target_donasi, 0, ',', '.') }}</p>
-                            <p class="card-text">Deskripsi: {{ $galangDana->deskripsi }}</p>
-                            <a href="{{ route('galang_dana.edit', $galangDana->id) }}" class="btn btn-primary">Edit</a>
-                            <form action="{{ route('galang_dana.destroy', $galangDana->id) }}" method="POST" style="display: inline;">
-                                @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete</button>
-                            </form>
-                        </div>
-                    </div>
+                <div class="col-12 mb-3 donation-item" >
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">Nama Galang Dana</th>
+                                <th scope="col">Nama Organisasi</th>
+                                <th scope="col">Kategori Donasi</th>
+                                <th scope="col">Target Donasi (Rp)</th>
+                                <th scope="col">Donasi Terkumpul (Rp)</th>
+                                <th scope="col">Deskripsi</th>
+                                <th scope="col">Gambar</th>
+                                <th scope="col">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach($galangDanaList as $index => $galangDana)
+                            <tr>
+                                <th scope="row">{{ $index + 1 }}</th>
+                                <td>{{ $galangDana->nama_galang_dana }}</td>
+                                <td>{{ $galangDana->nama_organisasi }}</td>
+                                <td>{{ $galangDana->kategori_donasi }}</td>
+                                <td>{{ number_format($galangDana->target_donasi, 0, ',', '.') }}</td>
+                                <td>{{ number_format($galangDana->terkumpul, 0, ',', '.') }}</td>
+                                <td>{{ $galangDana->deskripsi }}</td>
+                                <td>
+                                    @if($galangDana->gambar)
+                                    <img src="{{ asset('storage/images/' . $galangDana->gambar) }}" alt="Gambar" style="width: 100px; height: auto;">
+                                    @else
+                                    Tidak ada gambar
+                                    @endif
+                                </td>
+                                <td>
+                                    <a href="{{ route('galang_dana.edit', $galangDana->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                                    <form action="{{ route('galang_dana.destroy', $galangDana->id) }}" method="POST" style="display:inline-block;">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            @endforeach
+                        </tbody>
+                    </table>
                 </div>
-            @endforeach
         </div>
     </div>
 </section>

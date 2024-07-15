@@ -33,6 +33,8 @@ Route::post('/donasi', [DonasiController::class, 'store'])->name('donasi.store')
 
 Route::middleware('auth')->get('/verifikasi', [GalangDanaController::class, 'index'])->name('verifikasi');
 
+Route::get('/api/search', [GalangDanaController::class, 'search'])->name('api.galang_dana.search');
+
 Route::get('/homeverifikasi', function () {
     return view('homeverifikasi');
 })->name('homeverifikasi');

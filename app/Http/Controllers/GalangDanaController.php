@@ -50,6 +50,26 @@ class GalangDanaController extends Controller
         return view('verifikasi', compact('galangDanaList'));
     }
 
+    // public function index()
+    // {
+    //     $galangDanaList = GalangDana::all();
+    //     return view('home', compact('galangDanaList'));
+    // }
+
+    public function search(Request $request)
+    {
+        $query = $request->input('query');
+
+        $results = GalangDana::where('nama_galang_dana', 'LIKE', "%{$query}%")
+            ->orWhere('nama_organisasi', 'LIKE', "%{$query}%")
+            ->orWhere('kategori_donasi', 'LIKE', "%{$query}%")
+            ->orWhere('deskripsi', 'LIKE', "%{$query}%")
+            ->get();
+
+        return response()->json(['results' => $results]);
+    }
+
+
     public function edit($id)
     {
         $galangDana = GalangDana::findOrFail($id);
