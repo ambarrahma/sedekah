@@ -57,11 +57,18 @@ class GalangDanaController extends Controller
         return view('home', compact('galangDanaList'));
     }
 
+
     public function campaign()
     {
         $galangDanaList = GalangDana::all();
         return view('campaign', compact('galangDanaList'));
     }    
+
+    public function total_campaign()
+    {
+        $galangDanaList = GalangDana::all();
+        return view('total_campaign', compact('galangDanaList'));
+    }
 
     public function search(Request $request)
     {
@@ -96,7 +103,7 @@ class GalangDanaController extends Controller
         $galangDana = GalangDana::findOrFail($id);
         $galangDana->update($request->all());
 
-        return redirect()->route('galang_dana.index')->with('success', 'Data galang dana berhasil diupdate.');
+        return redirect()->route('total_campaign')->with('success', 'Data galang dana berhasil diupdate.');
     }
 
     public function destroy($id)

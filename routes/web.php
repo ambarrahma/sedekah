@@ -37,6 +37,8 @@ Route::middleware('auth')->get('/verifikasi', [GalangDanaController::class, 'ind
 
 Route::get('/api/search', [GalangDanaController::class, 'search'])->name('api.galang_dana.search');
 
+Route::get('/total-campaign', [GalangDanaController::class, 'total_campaign'])->name('total_campaign');
+
 Route::get('/homeverifikasi', function () {
     return view('homeverifikasi');
 })->name('homeverifikasi');

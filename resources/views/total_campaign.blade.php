@@ -36,68 +36,6 @@
       </div>
     </nav>
 
-<section id="dashboard">
-    <div class="container justify-content-center mt-2">
-        <div class="row border rounded justify-content-center mt-2">
-            <div class="col justify-content-center ">
-                <p class="text-dark" style="font-size: 5rem;">HELLO, {{ auth()->user()->nama }}</p>
-                    <p class="text-secondary">Platform yang membantu #TemanPeduli untuk menggalang dana.</p>
-            </div>
-            <div class="row border justify-content-center mt-2" style="background-color: #DEEBFB; color: #0D6EFD;">
-                <p class="text-center m-0"> Akun anda sudah terverifikasi</p>
-            </div>
-
-        </div>
-    </div>
-</section>
-<section id="total">
-    <div class="container ">
-        <div class="row  p-4">
-            <div class="col border mt-4 me-4 p-3">
-                <div class="col">
-                    <i class="bi bi-currency-exchange" style="font-size: 3rem; color: red;" ></i>
-                </div>
-                <div class="col">
-                    <p  class="fw-bold" style="font-size: 1rem;">Total donasi</p>
-                </div>
-            </div>
-            <div class="col border mt-4 me-4 p-3">
-            <div class="col">
-                    <i class="bi bi-currency-exchange" style="font-size: 3rem; color: red;"></i>
-                </div>
-                <div class="col">
-                    <a href="{{ route('total_campaign') }}" class="btn btn-primary">Total Campaign</a>
-                </div>
-            </div>
-            <div class="col border mt-4 me-4 p-3">
-            <div class="col">
-                    <i class="bi bi-currency-exchange" style="font-size: 3rem; color: red;"></i>
-                </div>
-                <div class="col">
-                    <p class="fw-bold" style="font-size: 1rem;">Total Pencairan Donasi</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="buatdonasi">
-    <div class="con">
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col text-center" style="background-color: #950000; color: white; padding: 20px; border-radius: 5px;">
-                <p style="font-size: 1.5rem; margin: 0;">Buat Galang Dana Anda</p>
-                <a href="{{route('buat.form')}}" 
-                    class="btn" 
-                    style="background-color: #ffcc00; color: #950000; border: none; padding: 10px 20px; font-size: 1rem; border-radius: 5px; margin-top: 20px;">
-                        Mulai Galang Dana
-                </a>
-
-            </div>
-        </div>
-    </div>
-    </div>
-</section>
 
 <section id="daftar">
     <div class="container border mt-5">
@@ -158,39 +96,6 @@
         </div>
     </div>
 </section>
-
-
-
-{{-- <section id="daftar">
-    <div class="container  border mt-5">
-        <h2 class="text-center pt-2 mt-3 border pb-2 text-white" style="background-color:#950000;":>Daftar Donasi Anda</h2>
-            <div class="row mt-4">
-                <div class="col-md-3">
-                    <label for="filter" class="form-label">Filter Per Minggu</label>
-                    <input type="week" class="form-control" id="filter" onchange="filterDonations()">
-                </div>
-            </div>
-            <div class="row mt-4" id="donation-list">
-                <!-- Daftar Donasi -->
-
-                <div class="container">
-                    @foreach($donasis as $donasi)
-                    <div class="card mb-3">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $donasi->nama }}</h5>
-                            <p class="card-text">Email: {{ $donasi->email }}</p>
-                            <p class="card-text">Nominal Donasi: {{ $donasi->nominal_donasi }}</p>
-                            <p class="card-text">Metode Pembayaran: {{ $donasi->metode_pembayaran }}</p>
-                            <p class="card-text">Pesan: {{ $donasi->pesan }}</p>
-                        </div>
-                    </div>
-                @endforeach
-                </div>
-
-            </div>
-        </div>
-</section> --}}
-
 
 
 <section id="border">
