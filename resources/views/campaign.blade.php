@@ -45,74 +45,40 @@
   </div>
 </nav>
 
-  <section id="campaign">
-        <div class="container mt-5 p-3">
-            <div class="row justify-content-center">
+<section id="campaign">
+    <div class="container mt-5 p-3">
+        <h1 class="row justify-content-center">Donasi Umum </h1>
+        <hr>
+        <div class="row justify-content-center">
+            @foreach ($galangDanaList as $galangDana)
                 <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ Storage::url('images/' . $galangDana->gambar) }}" class="card-img-top image-fluid" alt="...">
                         <div class="card-body">
-                            <h5 class="card-title">Card title 1</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
+                            <h5 class="card-title">{{ $galangDana->nama_galang_dana }}</h5>
+                            <div class="progress">
+                                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: {{ $galangDana->target_donasi / 50000000 * 100 }}%;" aria-valuenow="{{ $galangDana->target_donasi / 50000000 * 100 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mt-2">Rp {{ number_format($galangDana->target_donasi, 0, ',', '.') }} terkumpul dari Rp 50.000.000</p>
+                            <p class="text-muted">{{ $galangDana->nama_organisasi }}</p>
+                            <a href="{{ route('donasi.form') }}" class="btn btn-primary">Donasi Sekarang</a>
                         </div>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title 2</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title 3</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title 4</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title 5</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="/img/gambarsedekah.jpeg" class="card-img-top img-fluid" alt="...">
-                        <div class="card-body">
-                            <h5 class="card-title">Card title 6</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                            <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
+    </div>
 </section>
+
+@if(isset($galangDanaList))
+    @foreach ($galangDanaList as $galangDana)
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+            <!-- Your campaign content goes here -->
+        </div>
+    @endforeach
+@else
+    <p>No campaigns found.</p>
+@endif
 
 <section id="border">
     <div class="container mt-5">
