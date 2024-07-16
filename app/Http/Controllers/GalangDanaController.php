@@ -47,14 +47,21 @@ class GalangDanaController extends Controller
     public function index()
     {
         $galangDanaList = GalangDana::all();
+        // dd($galangDanaList);
         return view('verifikasi', compact('galangDanaList'));
     }
 
-    // public function index()
-    // {
-    //     $galangDanaList = GalangDana::all();
-    //     return view('home', compact('galangDanaList'));
-    // }
+    public function home()
+    {
+        $galangDanaList = GalangDana::all();
+        return view('home', compact('galangDanaList'));
+    }
+
+    public function campaign()
+    {
+        $galangDanaList = GalangDana::all();
+        return view('campaign', compact('galangDanaList'));
+    }    
 
     public function search(Request $request)
     {

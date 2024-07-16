@@ -112,8 +112,8 @@
 
 <section id="campaign_tetap">
     <div class="container mt-5 p-3 ">
-        <h1>Donasi bersama SedekahIn </h1>
-
+        <h1 class="row justify-content-center">Donasi bersama SedekahIn </h1>
+        <hr>
         <div class="row" id="galangDanaContainer">
             
         </div>
@@ -122,52 +122,39 @@
 
 <section id="campaign">
     <div class="container mt-5 p-3">
+        <h1 class="row justify-content-center">Donasi Umum </h1>
+        <hr>
         <div class="row justify-content-center">
-            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Donasi</h5>
-                        <div class="progress">
-                            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 98%;" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
+            @foreach ($galangDanaList as $galangDana)
+                <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+                    <div class="card" style="width: 18rem;">
+                        <img src="{{ Storage::url('images/' . $galangDana->gambar) }}" class="card-img-top image-fluid" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ $galangDana->nama_galang_dana }}</h5>
+                            <div class="progress">
+                                <div id="progress-bar" class="progress-bar" role="progressbar" style="width: {{ $galangDana->target_donasi / 50000000 * 100 }}%;" aria-valuenow="{{ $galangDana->target_donasi / 50000000 * 100 }}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <p class="mt-2">Rp {{ number_format($galangDana->target_donasi, 0, ',', '.') }} terkumpul dari Rp 50.000.000</p>
+                            <p class="text-muted">{{ $galangDana->nama_organisasi }}</p>
+                            <a href="{{ route('donasi.form') }}" class="btn btn-primary">Donasi Sekarang</a>
                         </div>
-                        <p class="mt-2">Rp 49.000.000 terkumpul dari Rp 50.000.000</p>
-                        <p class="text-muted">Yayasan Peduli</p>
-                        <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Donasi</h5>
-                        <div class="progress">
-                            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 98%;" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p class="mt-2">Rp 49.000.000 terkumpul dari Rp 50.000.000</p>
-                        <p class="text-muted">Yayasan Peduli</p>
-                        <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Nama Donasi</h5>
-                        <div class="progress">
-                            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 98%;" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>
-                        </div>
-                        <p class="mt-2">Rp 49.000.000 terkumpul dari Rp 50.000.000</p>
-                        <p class="text-muted">Yayasan Peduli</p>
-                        <a href="{{route('donasi.form')}}" class="btn btn-primary">Donasi Sekarang</a>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
+
+@if(isset($galangDanaList))
+    @foreach ($galangDanaList as $galangDana)
+        <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
+            <!-- Your campaign content goes here -->
+        </div>
+    @endforeach
+@else
+    <p>No campaigns found.</p>
+@endif
+
 
 
 <section id="donasi">
@@ -207,10 +194,10 @@
                     <div class="col-2 text-center pt-3">
                     <i class="bi bi-calendar2-heart " style="font-size :3rem;"></i>
                     </div>
-                    <div class="col-9 pt-3 ">
-                        <p class="fw-bold fs-3 ">60.000</p>
+                    <div class="col-9 pt-3">
+                        <p class="fw-bold fs-3">{{ \App\Models\Donasi::count() }}</p>
                         <p>#TemanPeduli yang telah berdonasi</p>
-                    </div>
+                    </div>                    
                 </div>
             </div>
             <div class="col-5 ">
@@ -219,9 +206,9 @@
                     <i class="bi bi-calendar2-heart " style="font-size :3rem;"></i>
                     </div>
                     <div class="col-9 pt-3">
-                        <p class="fw-bold fs-3">Rp. 50.000.000</p>
+                        <p class="fw-bold fs-3">Rp. {{ number_format(\App\Models\Donasi::sum('nominal_donasi'), 0, ',', '.') }}</p>
                         <p>Dana Terkumpul</p>
-                    </div>
+                    </div>                    
                 </div>
             </div>
         </div>
@@ -328,7 +315,7 @@
                             '<img src="/img/gambarsedekah.jpeg" class="card-img-top image-fluid" alt="...">' +
                             '<div class="card-body">' +
                             '<h5 class="card-title">' + item.nama_galang_dana + '</h5>' +
-                            '<p class="card-text">' + item.deskripsi + '</p>' +
+                            '<p class="card-text">' + item.deskripsiutama + '</p>' +
                             '<a href="{{route('donasi.tetap')}}?id='+item.id+'" class="btn btn-primary">Donasi Sekarang</a>' +
                             '</div>' +
                             '</div>' +

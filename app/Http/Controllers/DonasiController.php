@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\GalangDana;
 use App\Models\Donasi;
 
 class DonasiController extends Controller
@@ -40,9 +41,10 @@ class DonasiController extends Controller
     {
         // Ambil data donasi dari database
         $donasis = Donasi::all();
+        $galangDanaList = GalangDana::all();
 
         // Kirim data ke view home
-        return view('home', ['donasis' => $donasis]);
+        return view('home', compact('donasis', 'galangDanaList'));
     }
 
     public function verifikasi()
@@ -50,5 +52,15 @@ class DonasiController extends Controller
         $donasis = Donasi::all();
         return view('verifikasi', ['donasis' => $donasis]);
     }
+
+    public function campaign()
+    {
+        // Ambil data donasi dari database
+        $donasis = Donasi::all();
+        $galangDanaList = GalangDana::all();
+
+        // Kirim data ke view campaign
+        return view('campaign', compact('donasis', 'galangDanaList'));
+    } 
     
 }
