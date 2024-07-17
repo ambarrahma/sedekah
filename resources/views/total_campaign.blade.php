@@ -6,7 +6,8 @@
     <title>SEDEKAH</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> 
+</head>
 <body>
     <nav class="navbar navbar-expand-lg border-bottom ">
         <div class="container-fluid">
@@ -40,11 +41,13 @@
 <section id="daftar">
     <div class="container border mt-5">
         <h2 class="text-center pt-2 mt-3 border pb-2 text-white" style="background-color:#950000;">Daftar Galang Dana Anda</h2>
-        <div class="row mt-4">
+        <div class="row md-3">
             <div class="col-md-3">
+                <p class="fw-bold fs-3">Total Campaign :  {{App\Models\GalangDana::count()}}</p>
                 <label for="filter" class="form-label">Filter Per Minggu</label>
                 <input type="week" class="form-control" id="filter" onchange="filterDonations()">
             </div>
+
         </div>
         <div class="row mt-4" id="donation-list">
             <!-- Daftar Galang Dana -->
@@ -82,10 +85,10 @@
                                 </td>
                                 <td>
                                     <a href="{{ route('galang_dana.edit', $galangDana->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                                    <form action="{{ route('galang_dana.destroy', $galangDana->id) }}" method="POST" style="display:inline-block;">
+                                    <form id= "delete-form-{{ $galangDana->id }}"action="{{ route('galang_dana.destroy', $galangDana->id) }}" method="POST" style="display:inline-block;">
                                         @csrf
                                         @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm">Hapus</button>
+                                        <button type="button" class="btn btn-danger btn-sm" onclick="confirmDelete({{ $galangDana->id }})">Hapus</button>
                                     </form>
                                 </td>
                             </tr>
@@ -124,6 +127,58 @@
     </div>
 </section>
 
+<script>
+    function filterCampaigns() {
+        // Ambil nilai dari input tanggal mingguan
+        var selectedWeek = document.getElementById("filter").value;
+        
+        // Simulasi data campaign (ganti dengan implementasi sesuai dengan aplikasi Anda)
+        var campaigns = [
+            { id: 1, name: "Campaign 1", date: "2024-W01" },
+            { id: 2, name: "Campaign 2", date: "2024-W02" },
+            { id: 3, name: "Campaign 3", date: "2024-W03" }
+            // Contoh data, sesuaikan dengan data dan format yang Anda miliki
+        ];
+
+        // Kosongkan daftar campaign sebelum memuat yang baru
+        var campaignList = document.getElementById("campaignList");
+        campaignList.innerHTML = '';
+
+        // Filter campaign sesuai dengan minggu yang dipilih
+        var filteredCampaigns = campaigns.filter(function(campaign) {
+            return campaign.date === selectedWeek;
+        });
+
+        // Tampilkan hasil filter dalam daftar
+        filteredCampaigns.forEach(function(campaign) {
+            var listItem = document.createElement("li");
+            listItem.className = "list-group-item";
+            listItem.textContent = campaign.name;
+            campaignList.appendChild(listItem);
+        });
+
+        // Jika tidak ada campaign yang sesuai, beri pesan kosong
+        if (filteredCampaigns.length === 0) {
+            var noResultItem = document.createElement("li");
+            noResultItem.className = "list-group-item text-muted";
+            noResultItem.textContent = "Tidak ada campaign untuk minggu yang dipilih.";
+            campaignList.appendChild(noResultItem);
+        }
+    }
+</script>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+        function confirmDelete(id) {
+            if (confirm("Apakah Anda yakin ingin menghapus campaign ini?")) {
+                document.getElementById('delete-form-' + id).submit();
+            }
+        }
+        </script>
 </body>
 </html>

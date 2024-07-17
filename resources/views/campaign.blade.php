@@ -70,7 +70,7 @@
     </div>
 </section>
 
-@if(isset($galangDanaList))
+{{-- @if(isset($galangDanaList))
     @foreach ($galangDanaList as $galangDana)
         <div class="col-12 col-md-6 col-lg-4 text-center mb-5">
             <!-- Your campaign content goes here -->
@@ -78,7 +78,7 @@
     @endforeach
 @else
     <p>No campaigns found.</p>
-@endif
+@endif --}}
 
 <section id="border">
     <div class="container mt-5">
