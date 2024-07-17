@@ -58,8 +58,8 @@
                     <i class="bi bi-currency-exchange" style="font-size: 3rem; color: red;" ></i>
                 </div>
                 <div class="col">
-                    <p  class="fw-bold" style="font-size: 1rem;">Total donasi</p>
-                </div>
+                    <a href="{{ route ('donations-chart') }}" class="btn btn-primary mt-3">Total Donasi</a>
+                </div>            
             </div>
             <div class="col border mt-4 me-4 p-3">
             <div class="col">

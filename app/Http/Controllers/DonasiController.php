@@ -3,25 +3,19 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use App\Models\GalangDana;
 use App\Models\Donasi;
 
 class DonasiController extends Controller
 {
-    /**
-     * Menampilkan form donasi.
-     */
     public function create()
     {
         return view('donasi.create');
     }
 
-    /**
-     * Menyimpan data donasi ke dalam database.
-     */
     public function store(Request $request)
     {
-        // Validasi data
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'email' => 'required|email|max:255',
@@ -30,20 +24,16 @@ class DonasiController extends Controller
             'pesan' => 'nullable|string',
         ]);
 
-        // Simpan data ke database
         Donasi::create($validatedData);
 
-        // Redirect ke halaman yang sesuai dengan pesan sukses
         return redirect()->back()->with('success', 'Donasi berhasil dikirim!');
     }
 
     public function home()
     {
-        // Ambil data donasi dari database
         $donasis = Donasi::all();
         $galangDanaList = GalangDana::all();
 
-        // Kirim data ke view home
         return view('home', compact('donasis', 'galangDanaList'));
     }
 
@@ -55,12 +45,34 @@ class DonasiController extends Controller
 
     public function campaign()
     {
-        // Ambil data donasi dari database
         $donasis = Donasi::all();
         $galangDanaList = GalangDana::all();
 
-        // Kirim data ke view campaign
         return view('campaign', compact('donasis', 'galangDanaList'));
-    } 
+    }
+
+    public function getDonationsData() {
+        $donations = Donasi::select(
+                            DB::raw('SUM(nominal_donasi) as total'), 
+                            DB::raw('MONTH(created_at) as month')
+                        )
+                        ->groupBy('month')
+                        ->get();
+    
+        return response()->json($donations);
+    }
+
+    public function getDonationsList() {
+        $donasis = Donasi::all();
+        return view('donations_chart', compact('donasis'));
+    }
+
+    // public function showDonationsChart() {
+    //     $donasis = Donasi::all();
+    //      // dd($galangDanaList);
+    //     return view('donations_chart', compact('donasis'));
+    // }
+    
+    
     
 }

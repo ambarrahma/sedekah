@@ -33,6 +33,10 @@ Route::get('/verifikasi', [DonasiController::class, 'verifikasi'])->name('verifi
 Route::get('/donasi', [DonasiController::class, 'create'])->name('donasi.create');
 Route::post('/donasi', [DonasiController::class, 'store'])->name('donasi.store');
 
+Route::get('/donations-data', [DonasiController::class, 'getDonationsData']);
+// Route::get('/donations-list', [DonasiController::class, 'getDonationsList'])->name('donations.chart');
+// Route::get('/donations-chart', [DonasiController::class, 'showDonationsChart'])->name('donations.chart');
+
 Route::middleware('auth')->get('/verifikasi', [GalangDanaController::class, 'index'])->name('verifikasi');
 
 Route::get('/api/search', [GalangDanaController::class, 'search'])->name('api.galang_dana.search');
@@ -54,3 +58,8 @@ Route::get('/campaign', function () {
 Route::get('/donasi-tetap', function () {
     return view('donasi_tetap');
 })->name('donasi.tetap');
+
+Route::get('/donations-chart', function() {
+    return view('donations_chart');
+})->name('donations-chart');
+
