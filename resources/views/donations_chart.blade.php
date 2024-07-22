@@ -39,7 +39,7 @@
     </nav>
 
     <div class="container mt-5">
-        <h2>Total Donasi per Bulan</h2>
+        <h2>Total Donasi per Hari</h2>
         <canvas id="donationsChart" width="400" height="200"></canvas>
     </div>
 
@@ -78,12 +78,38 @@
         </div>
     </div> --}}
 
+    <section id="border">
+        <div class="container mt-5">
+            <div class="row border rounded  justify-content-center text-white" style="background-color:#950000;" >
+                <div class="col">
+                <p class="fw-bold mt-3 fs-2 text-white">SedekahIn</p>
+                        <p class="text-white">Kami telah memiliki izin pengumpulan uang dan barang
+                            untuk Non-Bencana di Kementerian Sosial Republik Indonesia
+                            dengan surat izin 341/HUK-PS/2023
+                        </p>
+                        <i class="bi bi-facebook" style="font-size :2rem; p-3"></i>
+                        <i class="bi bi-instagram" style="font-size :2rem;" ></i>
+                </div>
+    
+                <div class="col">
+                    <p class="fw-bold mt-3 fs-2 text-white text-end pe-5">Tentang</p>
+                    <p class="text-white">
+                        <ul class="text-white text-end pe-5">Syarat dan Ketentuan</ul>
+                        <ul class="text-white text-end pe-5">SedekahIn</ul>
+                        <ul class="text-white text-end pe-5">Hubungi Kami</ul>
+                        <ul class="text-white text-end pe-5">Partner kami</ul>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             fetch('/donations-data')
                 .then(response => response.json())
                 .then(data => {
-                    const labels = data.map(item => `Bulan ${item.month}`);
+                    const labels = data.map(item => item.date);
                     const totalDonasi = data.map(item => item.total);
 
                     const ctx = document.getElementById('donationsChart').getContext('2d');

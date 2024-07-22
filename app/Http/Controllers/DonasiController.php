@@ -54,18 +54,18 @@ class DonasiController extends Controller
     public function getDonationsData() {
         $donations = Donasi::select(
                             DB::raw('SUM(nominal_donasi) as total'), 
-                            DB::raw('MONTH(created_at) as month')
+                            DB::raw('DATE(created_at) as date')
                         )
-                        ->groupBy('month')
+                        ->groupBy('date')
                         ->get();
     
         return response()->json($donations);
-    }
+    }    
 
-    public function getDonationsList() {
-        $donasis = Donasi::all();
-        return view('donations_chart', compact('donasis'));
-    }
+    // public function getDonationsList() {
+    //     $donasis = Donasi::all();
+    //     return view('donations_chart', compact('donasis'));
+    // }
 
     // public function showDonationsChart() {
     //     $donasis = Donasi::all();
